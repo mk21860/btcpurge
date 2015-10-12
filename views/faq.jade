@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  #wrapper
+    #cssmenu
+      ul#nav
+        li
+          img#logoImg(src='http://i.imgur.com/fbKKCkm.png')
+        li
+          a(href='/newtx') HOME
+        li
+          a(href='/how') How Does it work
+        li
+          a(href='/contact') CONTACT
+        li
+          a(href='/faq') FAQ
+        li
+          a.btcPriceLabel(href='#') 1 BTC =  $#{btc_usd}        
+    center#content
+        #how1
+          h1
+            |FAQ
+          br
+          h3
+            | What is btcpurge?
+          | btcpurge is a bitcoin mixer intended to protect your financial privacy
+          h3
+            | Why should I mix my coins?
+          | Whether you watn to pay salaries in bitcoin, day trade / arbitrage on exchanges, or 
+          br
+          | simply want to protect your transaction history much like
+          br
+          | you would protect your bank statements it is a good idea to use a mixing service
+          h3
+            | What are the fees?
+          | btcpurge allows you to set your own fee ranging from 0.1-10%
+          h3
+            | What is the minimum and maximum amount allowed to mix?
+          | minimum is 0.0002 BTC maximum is 10 BTC (we aim to increase the maximum amount
+          br
+          | after gaining reputation) If you send us anything over 10btc we will still send
+          br
+          | the coins to the forward address however the coins are NOT guaranteed to be mixed
+          br
+          h3
+            | How many confirmations to confirm a deposit?
+          | 1 confirmation
+    #footer
+      #cssmenu
+        ul#nav
+          li
+            a(href='/faq') FAQ    

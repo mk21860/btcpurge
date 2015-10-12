@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  #wrapper
+    #cssmenu
+      ul#nav
+        li
+          img#logoImg(src='http://i.imgur.com/fbKKCkm.png')
+        li
+          a(href='/newtx') HOME
+        li
+          a(href='/how') How Does it work
+        li
+          a(href='/contact') CONTACT
+        li
+          a(href='/faq') FAQ
+        li
+          a.btcPriceLabel(href='#') 1 BTC =  $#{btc_usd}        
+    center#content
+        #how1
+          h1
+            |What is Bitpurge
+          | Btcpurge is the simplest, fastest, and cheapest way to mix your coins
+          br
+          h1
+            |How does it work
+          img(src = "http://imgur.com/TlDaI4D.gif")
+          br
+          | Magic
+          h1
+            |Development
+          |Bitpurge is currently in Alpha stage 
+    #footer
+      #cssmenu
+        ul#nav
+          li
+            a(href='/faq') FAQ      

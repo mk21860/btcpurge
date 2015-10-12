@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  #wrapper
+    #cssmenu
+      ul#nav
+        li
+          img#logoImg(src='http://i.imgur.com/fbKKCkm.png')
+        li
+          a(href='/newtx') HOME
+        li
+          a(href='/how') How Does it work
+        li
+          a(href='/contact') CONTACT
+        li
+          a(href='/faq') FAQ
+        li
+          a.btcPriceLabel(href='#') 1 BTC =  $#{btc_usd}        
+    center#content
+        #how1
+          h1
+            |Terms Of Service
+          br
+          | Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully
+          br
+          | before using the http://www.btcpurge.com website (the "Service") operated by BTCpurge
+          br
+          br
+          | Your access to and use of the Service is conditioned on your acceptance of and compliance 
+          br
+          | with these Terms. These Terms apply to all visitors, users and others who access or use 
+          br
+          | the Service.
+          br
+          br
+          | The generated address is valid for 24 hours. Any further deposits to that address will be 
+          br
+          | accepted as donations.
+          br
+          br
+          | You agree to copy the signed proof of service message before making any deposits.
+          br
+          br
+
+    #footer
+      #cssmenu
+        ul#nav
+          li
+            a(href='/faq') FAQ    

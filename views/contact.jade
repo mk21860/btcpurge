@@ -1,0 +1,53 @@
+extends layout
+
+block content
+  #wrapper
+    #cssmenu
+      ul#nav
+        li
+          img#logoImg(src='http://i.imgur.com/fbKKCkm.png')
+        li
+          a(href='/newtx') HOME
+        li
+          a(href='/how') How Does it work
+        li
+          a(href='/contact') CONTACT
+        li
+          a(href='/faq') FAQ
+        li
+          a.btcPriceLabel(href='#') 1 BTC =  $#{btc_usd} 
+    center#content
+        #how1
+          h1
+            |Contact
+        form#formAddTx(name="contact",method="post",action="/submitted")
+          br
+          | Name 
+          br
+          input#inputName.btn.btn-primary.btn-block(type="text", placeholder="Your name", name="contactName")
+          br
+          br
+          | Email
+          br
+          input#inputEmail.btn.btn-primary.btn-block(type="text", placeholder="Your contact email", name="contactEmail")
+          br
+          br 
+          | Inquiry
+          br
+          textarea#inputContact(form="formAddTx" name="inquiry")
+          br
+          br
+          | Captcha
+          br
+          img(src="/captcha.jpg")
+          br
+          br
+          input#inputCaptcha.btn.btn-primary.btn-block(type="text", placeholder="Answer", name="captchaAnswer")
+          br
+          br
+          button#btnSubmit.btnCustom(type="submit" ) Submit
+    #footer
+      #cssmenu
+        ul#nav
+          li
+            a(href='/faq') FAQ       

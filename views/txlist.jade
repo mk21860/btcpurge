@@ -1,0 +1,69 @@
+extends layout
+
+block content
+  #wrapper
+    #cssmenu
+      ul#nav
+        li
+          img#logoImg(src='http://i.imgur.com/fbKKCkm.png')
+        li
+          a(href='/newtx') HOME
+        li
+          a(href='/how') How Does it work
+        li
+          a(href='/contact') CONTACT
+        li
+          a(href='/faq') FAQ
+        li
+          a.btcPriceLabel(href='#') 1 BTC =  $#{btc_usd}   
+    center#content
+      #txlist.cnl
+        script(src='/socket.io/socket.io.js')
+        script.
+          var addr = !{ JSON.stringify(addr) };
+          var title = !{ JSON.stringify(title) };
+          io = io.connect()
+          // Emit ready event.
+          io.emit('ready', { message: addr }) //test with actual addresses
+          // Listen for the talk event.
+          io.on('talk', function(data) {
+          io.emit('pending', { message: addr })
+          //alert(title)
+          document.getElementById("confirmed").innerHTML = '<font color="red">Pending</font>';
+          document.getElementById("amount").innerHTML = JSON.stringify(data.message) ;          
+          })
+          // Listen for the confirmed event.
+          io.on('confirmed', function(data) {
+          document.getElementById("confirmed").innerHTML = '<font color="green">Confirmed</font>';
+          })
+        br
+        | Send your coins to the following address
+        br
+        br
+      #address.acnl
+        div= addr
+      br
+      #qrcode
+      script(src='/javascripts/qrcode.min.js')
+      script.
+        new QRCode(document.getElementById("qrcode"), !{ JSON.stringify(addr) });
+      br
+      .spinner
+        .bounce1
+        .bounce2
+        .bounce3
+      br
+      #amount
+      #confirmed.cnl
+        | #{title}
+      br
+      br
+      h2
+        | Proof Of Service
+      #signedMessage
+        | #{message}
+    #footer
+      #cssmenu
+        ul#nav
+          li
+            a(href='/faq') FAQ 

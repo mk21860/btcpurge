@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  #wrapper
+    #cssmenu
+      ul#nav
+        li
+          img#logoImg(src='http://i.imgur.com/fbKKCkm.png')
+        li
+          a(href='/newtx') HOME
+        li
+          a(href='/how') How Does it work
+        li
+          a(href='/contact') CONTACT
+        li
+          a(href='/faq') FAQ
+        li
+          a.btcPriceLabel(href='#') 1 BTC =  $#{btc_usd}        
+    center#content
+        #how1
+          h1
+            |Success
+          | Thank you for contacting us
+          br
+          | Your request will be processed shortly and an email will be sent
+          br
+          | to the one provided in the contact form 
+          h1
+    #footer
+      #cssmenu
+        ul#nav
+          li
+            a(href='/faq') FAQ    

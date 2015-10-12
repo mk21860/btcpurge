@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    ul#nav
+        li
+          a(href='/newtx') HOME
+        li
+          a(href='/how') How Does it work
+        li
+          a(href='/contact') CONTACT
+    center
+      br
+      script(src='/socket.io/socket.io.js')
+      script.
+        io = io.connect()
+        // Emit ready event.
+        io.emit('ready')
+        // Listen for the talk event.
+        io.on('talk', function(data) {
+        alert(data.message)
+        })
